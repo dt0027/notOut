@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NotOut</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body class="body_theme">
+
+<section id="start">
+    <div class="container">
+        <div class="row text-center">
+            <h1>Первый в мире полко-иннеровый калькулятор</h1>
+            <p>Все права не защищены</p>
+        </div>
+    </div>
+</section>
+
+<section id="data_main">
+    <div class="container data_box">
+        <div class="row text-center">
+            <div class="col-6">
+                <p class="name_setting_1">Текущие параметры</p>
+            </div>
+            <div class="col-6">
+                <p class="name_setting_2">Новые параметры</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-3">
+                <div class="input-container">
+                    <label for="allDiam1">Диаметр:</label>
+                    <input id="allDiam1" placeholder="Диаметр" type="number" step="0.5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-container input-container-L">
+                    <label for="offSet1">Вылет:</label>
+                    <input id="offSet1" placeholder="Вылет диска (ET)" type="number" step="0.5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-container input-container-R">
+                    <label for="allDiam2">Диаметр2:</label>
+                    <input id="allDiam2" placeholder="Диаметр" type="number" step="0.5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-container">
+                    <label for="offSet2">Вылет2:</label>
+                    <input id="offSet2" placeholder="Вылет диска (ET)" type="number" step="0.5" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-3">
+                <div class="input-container">
+                    <label for="out1">Полка:</label>
+                    <input id="out1" placeholder="ширина полки" type="number" step="0.5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-container input-container-L">
+                    <label for="inner1">Иннер:</label>
+                    <input id="inner1" placeholder="ширина иннера" type="number" step="0.5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-container input-container-R">
+                    <label for="out2">Полка2:</label>
+                    <input id="out2" placeholder="ширина полки" type="number" step="0.5">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-container">
+                    <label for="inner2">Иннер2:</label>
+                    <input id="inner2" placeholder="ширина иннера" type="number" step="0.5">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="upgrade">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="d-grid gap-2 mx-auto">
+                    <button onclick="newOffset()" class="btn_upgrade_1 btn btn-outline-danger btn-lg">Рассчитать</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-grid gap-2 mx-auto">
+                    <button onclick="innerHandler()" class="btn_upgrade_2 btn btn-outline-danger btn-lg">Визуализация</button>
+                </div>
+            </div>
+        </div>
+        <div class="work_script row">
+            <div class="col">
+                <div id="upgrade_line" class="upgrade_line"></div>
+                <p id="width1" class="script_work">Впишите параметры</p>
+                <p id="width2" class="script_work"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="visual">
+    <div class="container">
+        <div class="outer_inner">
+            <img class="start_out_inner" src="img/start.svg" alt="">
+            <img id="start_out_inner2" class="start_out_inner2" src="img/start2.svg" alt="">
+
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <div class="outer_lip">
+                    <img id="out_img" class="out_img" src="img/out.svg" alt="outer lip">
+                    <img id="out_img2" class="out_img2" src="img/out2.svg" alt="outer lip">
+                </div>
+            </div>
+            <div class="col">
+                <div class="inner_lip">
+                    <img id="inner_img" class="inner_img" src="img/out.svg" alt="inner lip">
+                    <img id="inner_img2" class="inner_img2" src="img/out2.svg" alt="inner lip">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="carousel" class="text-center">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/carousel/1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel/2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel/3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel/4.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel/5.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+</section>
+
+
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!--<style>-->
+<!--    .highlight {-->
+<!--        border: 2px solid blue;-->
+<!--    }-->
+<!--</style>-->
+
+<!--<label for="myInput">Введите текст:</label>-->
+<!--<input type="text" id="myInput">-->
+
+<!--<script>-->
+<!--    const inputElement = document.getElementById('myInput');-->
+
+<!--    inputElement.addEventListener('focus', () => {-->
+<!--        inputElement.classList.add('highlight');-->
+<!--    });-->
+
+<!--    inputElement.addEventListener('input', () => {-->
+<!--        // Можно добавить дополнительные действия при вводе текста, если необходимо-->
+<!--    });-->
+
+<!--    inputElement.addEventListener('blur', () => {-->
+<!--        //  Убираем подсветку при уходе фокуса, если поле пустое-->
+<!--        if (inputElement.value === "") {-->
+<!--            inputElement.classList.remove('highlight');-->
+<!--        }-->
+<!--    });-->
+
+<!--</script>-->
